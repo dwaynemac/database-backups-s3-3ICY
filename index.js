@@ -81,7 +81,7 @@ async function processBackup() {
         versionCommand = 'mongodump --version';
         break;
       case 'mysql':
-        dumpCommand = `mariadb-dump -u ${dbUser} -p${dbPassword} -h ${dbHostname} -P ${dbPort} –skip-tls ${dbName} > "${filepath}.dump"`;
+        dumpCommand = `mariadb-dump -u ${dbUser} -p${dbPassword} -h ${dbHostname} -P ${dbPort} –with-ssl=0 ${dbName} > "${filepath}.dump"`;
         versionCommand = 'mysql --version';
         break;
       default:
